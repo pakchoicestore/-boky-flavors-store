@@ -1,573 +1,329 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pak Choice Store</title>
+<meta name="theme-color" content="#090a08">
+<title>Boky Flavors | Premium Store</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial, sans-serif;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  background:#f5f5f5;
-  color:#222;
+ margin:0;background:#090a08;color:#fff9ed;
+ font-family:Arial,sans-serif;
 }
-
-/* HEADER */
+:root{--gold:#e9bd65;--gold2:#f8d991;--panel:#151610}
 header{
-  background:#111;
-  color:white;
-  padding:18px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:1000;
+ padding:18px 5%;display:flex;align-items:center;
+ justify-content:space-between;gap:15px;flex-wrap:wrap;
+ border-bottom:1px solid #8d6b32;
+ background:#0b0c09;position:sticky;top:0;z-index:10
 }
-
-.logo{
-  font-size:25px;
-  font-weight:bold;
-  color:#00d084;
+.logo{font-family:Georgia,serif;font-size:27px;color:var(--gold);font-weight:bold;letter-spacing:2px}
+.logo small{display:block;text-align:center;font-size:11px;letter-spacing:6px}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#fff4d9;text-decoration:none;font-size:14px}
+nav a:hover{color:var(--gold)}
+.gold-btn{
+ display:inline-block;border:0;border-radius:30px;
+ background:linear-gradient(110deg,#f8dc96,#d9a745);
+ color:#17120a;padding:13px 20px;font-weight:bold;
+ text-decoration:none;cursor:pointer;font-size:14px
 }
-
-.cart-btn{
-  background:#00d084;
-  color:#111;
-  border:0;
-  padding:10px 18px;
-  border-radius:25px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* HERO */
 .hero{
-  background:linear-gradient(135deg,#111,#333);
-  color:white;
-  text-align:center;
-  padding:55px 20px;
+ padding:65px 6%;min-height:350px;
+ background:radial-gradient(ellipse at 75% 35%,#493719 0%,#17150e 35%,#090a08 75%);
+ display:flex;align-items:center;justify-content:space-between;
+ gap:30px;flex-wrap:wrap;border-bottom:1px solid #725629
 }
-
-.hero h1{
-  font-size:40px;
-  margin-bottom:10px;
+.hero-copy{max-width:530px}
+.eyebrow{color:var(--gold);letter-spacing:4px;font-size:12px}
+h1{font: bold clamp(36px,6vw,62px) Georgia,serif;margin:15px 0}
+.script{color:var(--gold);font:italic 27px Georgia,serif}
+.hero p{line-height:1.8;color:#ddd4c1}
+.hero-art{
+ flex:1;min-width:230px;max-width:380px;min-height:230px;
+ display:flex;align-items:center;justify-content:center;
+ border:1px solid #725629;border-radius:20px;
+ background:linear-gradient(140deg,#272015,#090a08);
+ box-shadow:0 12px 50px #000;padding:25px;text-align:center
 }
-
-.hero p{
-  font-size:18px;
-  color:#ddd;
+.box-art{
+ width:210px;height:190px;border:2px solid var(--gold);
+ border-radius:5px;display:flex;align-items:center;justify-content:center;
+ flex-direction:column;transform:rotate(-3deg);
+ background:linear-gradient(135deg,#29251c,#080807);
+ box-shadow:12px 12px 0 #332718,0 0 30px #b58b3b33
 }
-
-/* SEARCH */
-.search-box{
-  padding:25px 5%;
-  text-align:center;
+.box-art .symbol{font-size:42px;color:var(--gold)}
+.box-art strong{font:28px Georgia,serif;color:var(--gold);letter-spacing:2px}
+.box-art small{letter-spacing:5px;color:#f7e2b2}
+.benefits{
+ display:grid;grid-template-columns:repeat(4,1fr);gap:10px;
+ padding:22px 5%;border-bottom:1px solid #4d3b21;text-align:center
 }
-
-.search-box input{
-  width:100%;
-  max-width:600px;
-  padding:15px 20px;
-  border:1px solid #ddd;
-  border-radius:30px;
-  font-size:16px;
-  outline:none;
-}
-
-/* PRODUCTS */
+.benefits div{font-size:13px;color:#e9d7b1}
+.benefits strong{display:block;color:var(--gold);margin-bottom:6px}
+.section{padding:48px 5%;text-align:center}
+.section h2{font: bold 34px Georgia,serif;margin:12px 0;color:#fff4dc}
+.intro{color:#c9c0ad;line-height:1.7}
 .products{
-  padding:10px 5% 50px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
+ max-width:950px;margin:28px auto;display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;text-align:left
 }
-
 .product{
-  background:white;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
-  transition:.3s;
+ padding:18px;border:1px solid #6c542e;border-radius:14px;
+ background:linear-gradient(140deg,#191a13,#0c0d0a)
 }
-
-.product:hover{
-  transform:translateY(-5px);
+.product-visual{
+ min-height:170px;display:flex;align-items:center;justify-content:center;
+ background:radial-gradient(ellipse,#44351c,#17150f 65%,#0c0d0a);
+ border-radius:9px;margin-bottom:18px
 }
-
-.product img{
-  width:100%;
-  height:230px;
-  object-fit:cover;
+.product-visual .box-art{width:155px;height:135px}
+.product-visual .box-art strong{font-size:21px}
+.product-visual .symbol{font-size:30px}
+.tag{color:#17120a;background:var(--gold);padding:6px 10px;border-radius:20px;font-size:11px;font-weight:bold}
+.product h3{font: bold 25px Georgia,serif;margin:14px 0 5px}
+.size{color:#d6c9ad}
+.price{font:bold 29px Georgia,serif;color:var(--gold);margin:12px 0}
+.product ul{padding-left:20px;color:#ded8c9;line-height:1.9;font-size:14px}
+.product .gold-btn{width:100%;text-align:center}
+.steps{
+ background:linear-gradient(110deg,#1d1a12,#10110d);
+ border-top:1px solid #5d4827;border-bottom:1px solid #5d4827
 }
-
-.product-info{
-  padding:16px;
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.step{padding:18px}
+.step span{color:var(--gold);font-size:25px}
+.step h3{font-size:16px}
+.step p{font-size:14px;color:#c9c0ad;line-height:1.6}
+.order-area{
+ max-width:700px;margin:0 auto;text-align:left;padding:25px;
+ border:1px solid #72572d;border-radius:14px;background:#11120e
 }
-
-.product h3{
-  font-size:18px;
-  margin-bottom:8px;
+.order-area h2{font:27px Georgia,serif;color:var(--gold);margin-top:0}
+label{display:block;margin:14px 0 6px;font-size:14px;color:#e7d7b7}
+input,select,textarea{
+ display:block;width:100%;padding:13px;border:1px solid #594b30;
+ background:#090a08;color:white;border-radius:7px;font:16px Arial
 }
-
-.price{
-  color:#00a86b;
-  font-size:21px;
-  font-weight:bold;
-}
-
-.old-price{
-  color:#999;
-  text-decoration:line-through;
-  font-size:14px;
-  margin-left:5px;
-}
-
-.discount{
-  display:inline-block;
-  background:#ff3b30;
-  color:white;
-  padding:4px 8px;
-  border-radius:5px;
-  font-size:12px;
-  margin-bottom:8px;
-}
-
-.add-btn{
-  width:100%;
-  margin-top:12px;
-  padding:12px;
-  border:0;
-  border-radius:8px;
-  background:#111;
-  color:white;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.add-btn:hover{
-  background:#00a86b;
-}
-
-/* CART */
-.cart{
-  position:fixed;
-  right:-400px;
-  top:0;
-  width:350px;
-  max-width:90%;
-  height:100%;
-  background:white;
-  z-index:2000;
-  box-shadow:-5px 0 20px rgba(0,0,0,.2);
-  padding:25px;
-  transition:.3s;
-  overflow-y:auto;
-}
-
-.cart.active{
-  right:0;
-}
-
-.cart h2{
-  margin-bottom:20px;
-}
-
-.close-cart{
-  float:right;
-  background:#111;
-  color:white;
-  border:0;
-  padding:5px 10px;
-  cursor:pointer;
-}
-
-.cart-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid #ddd;
-  padding:12px 0;
-}
-
-.cart-item button{
-  background:#ff3b30;
-  color:white;
-  border:0;
-  padding:5px 8px;
-  border-radius:5px;
-}
-
-.total{
-  font-size:20px;
-  font-weight:bold;
-  margin:20px 0;
-}
-
-.whatsapp{
-  display:block;
-  text-align:center;
-  background:#25D366;
-  color:white;
-  padding:14px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-/* FOOTER */
-footer{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:30px 15px;
-}
-
-footer span{
-  color:#00d084;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:550px){
-  header{
-    padding:15px;
-  }
-
-  .logo{
-    font-size:20px;
-  }
-
-  .hero h1{
-    font-size:30px;
-  }
-
-  .products{
-    grid-template-columns:1fr;
-    padding:10px 15px 40px;
-  }
-
-  .product img{
-    height:260px;
-  }
+textarea{resize:vertical}
+.order-area .gold-btn{width:100%;margin-top:20px}
+.note{font-size:12px;color:#b9ad94;line-height:1.6}
+footer{padding:28px 15px;text-align:center;border-top:1px solid #574323;color:#c5b38d;font-size:13px}
+@media(max-width:600px){
+ header{justify-content:center;text-align:center}
+ nav{justify-content:center;width:100%}
+ .hero{padding:45px 6%}
+ .hero-art{min-width:100%}
+ .benefits{grid-template-columns:repeat(2,1fr)}
+ .products{grid-template-columns:1fr}
+ .step-grid{grid-template-columns:1fr;gap:0}
+ .section{padding:35px 5%}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">Pak Choice Store</div>
-  <button class="cart-btn" onclick="openCart()">
-    🛒 Cart (<span id="cartCount">0</span>)
-  </button>
+ <a href="#home" style="text-decoration:none">
+  <div class="logo">BOKY<small>FLAVORS</small></div>
+ </a>
+ <nav>
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#about">About</a>
+  <a href="#contact">Order</a>
+ </nav>
+ <a class="gold-btn" href="#contact">Order Now</a>
 </header>
 
-<section class="hero">
-  <h1>Welcome to Pak Choice Store</h1>
-  <p>Quality Products • Best Prices • Easy Shopping</p>
+<section class="hero" id="home">
+ <div class="hero-copy">
+  <div class="eyebrow">PREMIUM FLAVORS</div>
+  <h1>Boky Flavors</h1>
+  <div class="script">Taste the Difference</div>
+  <p>Har ek Boky mein behtareen quality aur ek khaas experience. Apna pasandida size select karein aur WhatsApp par order karein.</p>
+  <a class="gold-btn" href="#products">Explore Collection →</a>
+ </div>
+ <div class="hero-art">
+  <div class="box-art">
+   <div class="symbol">✦</div>
+   <strong>BOKY</strong>
+   <small>FLAVORS</small>
+   <p style="color:#e9bd65;font-size:10px;letter-spacing:2px">PREMIUM QUALITY</p>
+  </div>
+ </div>
 </section>
 
-<div class="search-box">
-  <input
-    type="text"
-    id="search"
-    placeholder="Search products..."
-    onkeyup="searchProducts()"
-  >
+<div class="benefits">
+ <div><strong>✧ Premium Look</strong>Elegant Collection</div>
+ <div><strong>➤ Easy Ordering</strong>WhatsApp Orders</div>
+ <div><strong>◇ Clear Pricing</strong>Two Sizes</div>
+ <div><strong>♡ Customer Care</strong>Order Confirmation</div>
 </div>
 
-<section class="products" id="productList">
+<section class="section" id="products">
+ <div class="eyebrow">OUR SPECIAL COLLECTION</div>
+ <h2>Choose Your Boky</h2>
+ <p class="intro">Same Boky, do sizes. Apni pasand ka size select karein.</p>
 
-<!-- PRODUCT 1 -->
-<div class="product" data-name="Luxury Diamond Watch">
-<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">20% OFF</span>
-<h3>Luxury Diamond Watch</h3>
-<div class="price">Rs. 2,999 <span class="old-price">Rs. 3,799</span></div>
-<button class="add-btn" onclick="addToCart('Luxury Diamond Watch',2999)">
-Add to Cart
-</button>
-</div>
-</div>
+ <div class="products">
+  <article class="product">
+   <div class="product-visual">
+    <div class="box-art">
+     <div class="symbol">✦</div>
+     <strong>BOKY</strong>
+     <small>FLAVORS</small>
+    </div>
+   </div>
+   <span class="tag">SMALL SIZE</span>
+   <h3>Boky</h3>
+   <div class="size">Small Size</div>
+   <div class="price">Rs. 2,000</div>
+   <ul>
+    <li>Same Boky product</li>
+    <li>Small size</li>
+    <li>WhatsApp ordering</li>
+   </ul>
+   <button class="gold-btn" style="width:100%" onclick="chooseSize('small')">Order Small Boky</button>
+  </article>
 
-<!-- PRODUCT 2 -->
-<div class="product" data-name="Premium Men's Sneakers">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">15% OFF</span>
-<h3>Premium Men's Sneakers</h3>
-<div class="price">Rs. 3,499 <span class="old-price">Rs. 4,100</span></div>
-<button class="add-btn" onclick="addToCart('Premium Mens Sneakers',3499)">
-Add to Cart
-</button>
-</div>
-</div>
-
-<!-- PRODUCT 3 -->
-<div class="product" data-name="Wireless Bluetooth Earbuds">
-<img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">25% OFF</span>
-<h3>Wireless Bluetooth Earbuds</h3>
-<div class="price">Rs. 1,499 <span class="old-price">Rs. 1,999</span></div>
-<button class="add-btn" onclick="addToCart('Wireless Bluetooth Earbuds',1499)">
-Add to Cart
-</button>
-</div>
-</div>
-
-<!-- PRODUCT 4 -->
-<div class="product" data-name="Stylish Backpack">
-<img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">18% OFF</span>
-<h3>Stylish Backpack</h3>
-<div class="price">Rs. 1,999 <span class="old-price">Rs. 2,400</span></div>
-<button class="add-btn" onclick="addToCart('Stylish Backpack',1999)">
-Add to Cart
-</button>
-</div>
-</div>
-
-<!-- PRODUCT 5 -->
-<div class="product" data-name="Fashion Sunglasses">
-<img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">20% OFF</span>
-<h3>Fashion Sunglasses</h3>
-<div class="price">Rs. 999 <span class="old-price">Rs. 1,299</span></div>
-<button class="add-btn" onclick="addToCart('Fashion Sunglasses',999)">
-Add to Cart
-</button>
-</div>
-</div>
-
-<!-- PRODUCT 6 -->
-<div class="product" data-name="Premium Casual T Shirt">
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">15% OFF</span>
-<h3>Premium Casual T-Shirt</h3>
-<div class="price">Rs. 1,299 <span class="old-price">Rs. 1,499</span></div>
-<button class="add-btn" onclick="addToCart('Premium Casual T Shirt',1299)">
-Add to Cart
-</button>
-</div>
-</div>
-
-<!-- PRODUCT 7 -->
-<div class="product" data-name="Men's Formal Shoes">
-<img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">20% OFF</span>
-<h3>Men's Formal Shoes</h3>
-<div class="price">Rs. 3,299 <span class="old-price">Rs. 3,999</span></div>
-<button class="add-btn" onclick="addToCart('Mens Formal Shoes',3299)">
-Add to Cart
-</button>
-</div>
-</div>
-
-<!-- PRODUCT 8 -->
-<div class="product" data-name="LED Desk Lamp">
-<img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">25% OFF</span>
-<h3>LED Desk Lamp</h3>
-<div class="price">Rs. 1,199 <span class="old-price">Rs. 1,599</span></div>
-<button class="add-btn" onclick="addToCart('LED Desk Lamp',1199)">
-Add to Cart
-</button>
-</div>
-</div>
-
-<!-- PRODUCT 9 -->
-<div class="product" data-name="Portable Bluetooth Speaker">
-<img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">20% OFF</span>
-<h3>Portable Bluetooth Speaker</h3>
-<div class="price">Rs. 2,199 <span class="old-price">Rs. 2,699</span></div>
-<button class="add-btn" onclick="addToCart('Portable Bluetooth Speaker',2199)">
-Add to Cart
-</button>
-</div>
-</div>
-
-<!-- PRODUCT 10 -->
-<div class="product" data-name="Mobile Phone Stand">
-<img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=700&q=80">
-<div class="product-info">
-<span class="discount">30% OFF</span>
-<h3>Mobile Phone Stand</h3>
-<div class="price">Rs. 699 <span class="old-price">Rs. 999</span></div>
-<button class="add-btn" onclick="addToCart('Mobile Phone Stand',699)">
-Add to Cart
-</button>
-</div>
-</div>
-
+  <article class="product">
+   <div class="product-visual">
+    <div class="box-art" style="width:175px;height:155px">
+     <div class="symbol">✦</div>
+     <strong>BOKY</strong>
+     <small>FLAVORS</small>
+    </div>
+   </div>
+   <span class="tag">LARGE SIZE</span>
+   <h3>Boky</h3>
+   <div class="size">Large Size</div>
+   <div class="price">Rs. 2,500</div>
+   <ul>
+    <li>Same Boky product</li>
+    <li>Large size</li>
+    <li>WhatsApp ordering</li>
+   </ul>
+   <button class="gold-btn" style="width:100%" onclick="chooseSize('large')">Order Large Boky</button>
+  </article>
+ </div>
+ <p class="note">Product photos are temporary design placeholders. Actual photos can be added later.</p>
 </section>
 
-<!-- CART -->
-<div class="cart" id="cart">
+<section class="section steps" id="about">
+ <div class="eyebrow">SIMPLE & EASY</div>
+ <h2>How to Order?</h2>
+ <div class="step-grid">
+  <div class="step"><span>01</span><h3>Select Your Boky</h3><p>Small ya Large size choose karein.</p></div>
+  <div class="step"><span>02</span><h3>Enter Your Details</h3><p>Apna naam, phone, city aur address likhein.</p></div>
+  <div class="step"><span>03</span><h3>Send on WhatsApp</h3><p>Order message check karke WhatsApp par send karein.</p></div>
+ </div>
+</section>
 
-<button class="close-cart" onclick="closeCart()">X</button>
+<section class="section" id="contact">
+ <div class="order-area">
+  <h2>Place Your Order</h2>
+  <p class="intro">Apni details fill karein. Order WhatsApp par bheja jayega.</p>
 
-<h2>🛒 Your Cart</h2>
+  <form id="orderForm">
+   <label for="customer">Your Name</label>
+   <input id="customer" type="text" placeholder="Apna naam likhein" required>
 
-<div id="cartItems"></div>
+   <label for="phone">Phone Number</label>
+   <input id="phone" type="tel" placeholder="03XXXXXXXXX" required>
 
-<div class="total">
-Total: Rs. <span id="cartTotal">0</span>
-</div>
+   <label for="city">City</label>
+   <input id="city" type="text" placeholder="e.g. Sibi" required>
 
-<a
-  id="whatsappOrder"
-  class="whatsapp"
-  href="#"
-  target="_blank"
->
-📱 Order on WhatsApp
-</a>
+   <label for="address">Delivery Address</label>
+   <textarea id="address" rows="3" placeholder="Apna poora address likhein" required></textarea>
 
-</div>
+   <label for="product">Select Boky Size</label>
+   <select id="product" required>
+    <option value="small">Boky - Small Size (Rs. 2,000)</option>
+    <option value="large">Boky - Large Size (Rs. 2,500)</option>
+   </select>
+
+   <label for="quantity">Quantity</label>
+   <select id="quantity">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+   </select>
+
+   <label for="note">Additional Note (Optional)</label>
+   <textarea id="note" rows="2" placeholder="Koi extra baat?"></textarea>
+
+   <button class="gold-btn" type="submit">Send Order on WhatsApp →</button>
+   <p class="note">WhatsApp khulne ke baad order details check karke Send dabayein. Delivery charges confirm kiye jayenge.</p>
+  </form>
+ </div>
+</section>
 
 <footer>
-<p>© 2026 <span>Pak Choice Store</span></p>
-<p>Quality Products at Best Prices</p>
+ <div class="logo">BOKY <small>FLAVORS</small></div>
+ <p>Premium Taste • Premium Choice</p>
+ <p>© 2026 Boky Flavors. All rights reserved.</p>
 </footer>
 
 <script>
+const WHATSAPP_NUMBER = "923702118764";
 
-let cart = [];
-
-function addToCart(name, price){
-
-  cart.push({
-    name:name,
-    price:price
-  });
-
-  updateCart();
-
-  alert(name + " added to cart!");
+function chooseSize(size){
+ document.getElementById("product").value = size;
+ document.getElementById("contact").scrollIntoView({behavior:"smooth"});
 }
 
-function updateCart(){
+document.getElementById("orderForm").addEventListener("submit",function(event){
+ event.preventDefault();
 
-  let items = document.getElementById("cartItems");
-  let count = document.getElementById("cartCount");
-  let total = document.getElementById("cartTotal");
+ const name = document.getElementById("customer").value.trim();
+ const phone = document.getElementById("phone").value.trim();
+ const city = document.getElementById("city").value.trim();
+ const address = document.getElementById("address").value.trim();
+ const size = document.getElementById("product").value;
+ const quantity = Number(document.getElementById("quantity").value);
+ const note = document.getElementById("note").value.trim();
 
-  items.innerHTML = "";
+ if(!name || !phone || !city || !address){
+  alert("Bhai, tamam zaroori details fill karein.");
+  return;
+ }
 
-  let totalPrice = 0;
+ const sizeName = size === "large" ? "Large Size" : "Small Size";
+ const unitPrice = size === "large" ? 2500 : 2000;
+ const total = unitPrice * quantity;
 
-  cart.forEach((item,index)=>{
+ const message = [
+  "Assalam-o-Alaikum Boky Flavors!",
+  "",
+  "New Order",
+  "Customer: " + name,
+  "Phone: " + phone,
+  "City: " + city,
+  "Address: " + address,
+  "Product: Boky - " + sizeName,
+  "Quantity: " + quantity,
+  "Unit Price: Rs. " + unitPrice.toLocaleString("en-PK"),
+  "Product Total: Rs. " + total.toLocaleString("en-PK"),
+  "Delivery Charges: Please confirm",
+  note ? "Additional Note: " + note : "",
+  "",
+  "Please confirm product availability and delivery charges."
+ ].filter(Boolean).join("\n");
 
-    totalPrice += item.price;
+ const url = "https://wa.me/" + WHATSAPP_NUMBER +
+             "?text=" + encodeURIComponent(message);
 
-    items.innerHTML += `
-      <div class="cart-item">
-        <div>
-          <strong>${item.name}</strong><br>
-          Rs. ${item.price.toLocaleString()}
-        </div>
-
-        <button onclick="removeItem(${index})">
-          Remove
-        </button>
-      </div>
-    `;
-  });
-
-  count.innerText = cart.length;
-  total.innerText = totalPrice.toLocaleString();
-
-  createWhatsAppLink();
-}
-
-function removeItem(index){
-
-  cart.splice(index,1);
-
-  updateCart();
-}
-
-function openCart(){
-
-  document.getElementById("cart").classList.add("active");
-}
-
-function closeCart(){
-
-  document.getElementById("cart").classList.remove("active");
-}
-
-function searchProducts(){
-
-  let search =
-    document.getElementById("search").value.toLowerCase();
-
-  let products =
-    document.querySelectorAll(".product");
-
-  products.forEach(product=>{
-
-    let name =
-      product.getAttribute("data-name").toLowerCase();
-
-    if(name.includes(search)){
-      product.style.display = "";
-    }else{
-      product.style.display = "none";
-    }
-
-  });
-}
-
-function createWhatsAppLink(){
-
-  let phone = "923702118764";
-
-  let message = "Assalam o Alaikum! I want to order:%0A%0A";
-
-  cart.forEach((item,index)=>{
-
-    message +=
-      (index+1) + ". " +
-      item.name +
-      " - Rs. " +
-      item.price.toLocaleString() +
-      "%0A";
-  });
-
-  let total =
-    cart.reduce((sum,item)=>sum + item.price,0);
-
-  message +=
-    "%0ATotal: Rs. " +
-    total.toLocaleString();
-
-  document.getElementById("whatsappOrder").href =
-    "https://wa.me/" + phone + "?text=" + message;
-}
-
+ window.location.href = url;
+});
 </script>
-
 </body>
 </html>
